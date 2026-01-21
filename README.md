@@ -1,4 +1,4 @@
-```
+
 # Sentinel-C 🛡️
 
 Author: Voltsparx  
@@ -23,40 +23,54 @@ It scans directories, detects NEW, MODIFIED, or DELETED files, logs events, and 
 Linux / macOS:
 
 1. Clone the repo:
+```bash
 git clone https://github.com/voltsparx/Sentinel-C.git
 cd Sentinel-C
+```
 
 2. Build with CMake:
+```bash
 mkdir build
 cd build
 cmake ..
 cmake --build .
+```
 
 3. Run from build folder:
+```bash
 ./sentinel-c help
+```
 
 Optional: Copy to PATH for global CLI:
+```bash
 sudo cp sentinel-c /usr/local/bin/
+```
 
 Windows (CMD / PowerShell):
 
 1. Clone the repo:
+```powershell
 git clone https://github.com/voltsparx/Sentinel-C.git
 cd Sentinel-C
+```
 
 2. Build:
+```powershell
 mkdir build
 cd build
 cmake ..
 cmake --build .
+```
 
-3. Run executable:
+4. Run executable:
+```powershell
 sentinel-c.exe help
+```
 
 ---
 
 📁 Project Structure
-
+```
 Sentinel-C/
 ├── src/                # C++ source and headers
 ├── CMakeLists.txt
@@ -64,7 +78,7 @@ Sentinel-C/
 ├── .gitignore
 ├── reports/            # HTML reports stored here
 └── data/               # Baseline & log files stored here
-
+```
 Folders reports/ and data/ are automatically created if missing.  
 .sentinel.log is saved in data/.  
 HTML reports are saved in reports/.
@@ -74,21 +88,31 @@ HTML reports are saved in reports/.
 ⚡ Usage
 
 # Show help
+```
 sentinel-c help
+```
 
 # Initialize baseline
+```
 sentinel-c init <directory>
+```
 
 # Scan directory and compare to baseline
+```
 sentinel-c scan <directory>
+```
 
 # Monitor continuously every N seconds
+```
 sentinel-c monitor <directory> [interval_seconds]
+```
 
 Example:
+```
 ./sentinel-c init .
 ./sentinel-c scan .
 ./sentinel-c monitor . 10
+```
 
 - init creates the baseline  
 - scan compares current files to baseline  
@@ -118,4 +142,4 @@ Example:
 📄 License
 
 This project is released under the MIT License.
-```
+
