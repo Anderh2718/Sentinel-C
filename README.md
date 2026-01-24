@@ -1,145 +1,215 @@
+# Sentinel-C v3.10 🛡️
 
-# Sentinel-C 🛡️
+**Author:** Voltsparx  
+**Contact:** voltsparx@gmail.com  
+**Language:** C/C++  
+**Repo:** [https://github.com/voltsparx/Sentinel-C](https://github.com/voltsparx/Sentinel-C)  
 
-Author: Voltsparx  
-Language: C/C++  
-Repo: https://github.com/voltsparx/Sentinel-C  
-
-Sentinel-C is a Host-Based File Integrity Monitor (HIDS).  
-It scans directories, detects NEW, MODIFIED, or DELETED files, logs events, and generates HTML reports for easy auditing.  
-
----
-
-⚠️ Ethical Use & Disclaimer
-
-- This tool is designed for ethical security monitoring of systems and directories you own or have permission to monitor.  
-- Do not use it to tamper with, spy on, or attack systems you do not own.  
-- The author is not responsible for misuse.  
+Sentinel-C is an **Advanced Host Defense Multi-Tool**.  
+It provides file integrity monitoring, logging, HTML reports, and additional small security utilities — designed for cybersecurity learners, professionals, and anyone who cares about system security.
 
 ---
 
-🛠️ Installation
+## ⚠️ **Ethical Use & Disclaimer**
 
-Linux / macOS:
+- This tool is **only for ethical monitoring** of systems and directories you own or have permission to monitor.  
+- **Do not** use it to tamper with, spy on, or attack systems you do not own.  
+- The author is **not responsible for misuse**.  
+- Data logged by Sentinel-C is stored locally for your convenience and **not shared anywhere**.
 
-1. Clone the repo:
+---
+
+## 🛠️ **Installation**
+
+### **Linux / Unix:**
+
 ```bash
 git clone https://github.com/voltsparx/Sentinel-C.git
 cd Sentinel-C
-```
-
-2. Build with CMake:
-```bash
 mkdir build
 cd build
 cmake ..
 cmake --build .
 ```
 
-3. Run from build folder:
+#### Run from build folder:
+
 ```bash
-./sentinel-c help
+./sentinel-c --help
 ```
 
-Optional: Copy to PATH for global CLI:
+Optional: Add to PATH for global use:
+
 ```bash
 sudo cp sentinel-c /usr/local/bin/
 ```
 
-Windows (CMD / PowerShell):
+### **Windows (CMD / PowerShell):**
 
-1. Clone the repo:
 ```powershell
 git clone https://github.com/voltsparx/Sentinel-C.git
 cd Sentinel-C
-```
-
-2. Build:
-```powershell
 mkdir build
 cd build
 cmake ..
 cmake --build .
 ```
 
-4. Run executable:
+#### Run executable:
+
 ```powershell
-sentinel-c.exe help
+sentinel-c.exe --help
 ```
 
 ---
 
-📁 Project Structure
+## 📁 **Project Structure**
+
 ```
 Sentinel-C/
-├── src/                # C++ source and headers
+├── src/                # Source & headers
 ├── CMakeLists.txt
 ├── README.md
 ├── .gitignore
-├── reports/            # HTML reports stored here
-└── data/               # Baseline & log files stored here
+├── sentinel-c-logs/    # Logs & HTML reports
+│   ├── data/
+│   └── reports/
 ```
-Folders reports/ and data/ are automatically created if missing.  
-.sentinel.log is saved in data/.  
-HTML reports are saved in reports/.
+
+- Folders `data/` and `reports/` are **automatically created** if missing.  
+- `.sentinel.log` is stored in `data/`.  
+- HTML reports are stored in `reports/`.
 
 ---
 
-⚡ Usage
+## ⚡ **Features**
 
-# Show help
-```
-sentinel-c help
-```
-
-# Initialize baseline
-```
-sentinel-c init <directory>
-```
-
-# Scan directory and compare to baseline
-```
-sentinel-c scan <directory>
-```
-
-# Monitor continuously every N seconds
-```
-sentinel-c monitor <directory> [interval_seconds]
-```
-
-Example:
-```
-./sentinel-c init .
-./sentinel-c scan .
-./sentinel-c monitor . 10
-```
-
-- init creates the baseline  
-- scan compares current files to baseline  
-- monitor scans repeatedly and updates logs & HTML reports  
+- Multi-tool framework for daily security and monitoring.  
+- File integrity monitoring (NEW, MODIFIED, DELETED files).  
+- SHA-256 based hashing for file verification.  
+- Continuous monitoring with customizable intervals.  
+- Logs actions in **HTML reports** and local log files.  
+- Baseline integrity verification (`--doctor`).  
+- Single file verification (`--verify`).  
+- Banner display and tool information (`--banner`, `--about`).  
+- Compatible with **Linux and Windows**.  
+- Beginner-friendly CLI with short (`-`) and long (`--`) commands.
 
 ---
 
-🟢 Output
+## 💻 **Commands & Usage**
 
-- Colored terminal messages:
-  - Green → NEW files  
-  - Yellow → MODIFIED files  
-  - Red → DELETED files  
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Short</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Show help</td>
+      <td>-h</td>
+      <td>Display this help menu</td>
+      <td><code>sentinel-c --help</code></td>
+    </tr>
+    <tr>
+      <td>Version</td>
+      <td>-v</td>
+      <td>Show tool version</td>
+      <td><code>sentinel-c --version</code></td>
+    </tr>
+    <tr>
+      <td>Show banner</td>
+      <td>–</td>
+      <td>Display ASCII banner</td>
+      <td><code>sentinel-c --banner</code></td>
+    </tr>
+    <tr>
+      <td>About</td>
+      <td>–</td>
+      <td>Tool info + author contact</td>
+      <td><code>sentinel-c --about</code></td>
+    </tr>
+    <tr>
+      <td>Initialize baseline</td>
+      <td>-i</td>
+      <td>Scan directory and create baseline</td>
+      <td><code>sentinel-c --init ./myfolder</code></td>
+    </tr>
+    <tr>
+      <td>Scan</td>
+      <td>-s</td>
+      <td>Compare current directory to baseline</td>
+      <td><code>sentinel-c --scan ./myfolder</code></td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>-m</td>
+      <td>Continuously scan every N seconds</td>
+      <td><code>sentinel-c --monitor ./myfolder 10</code></td>
+    </tr>
+    <tr>
+      <td>Verify file</td>
+      <td>-f</td>
+      <td>Check SHA-256 hash of a single file</td>
+      <td><code>sentinel-c --verify ./file.txt</code></td>
+    </tr>
+    <tr>
+      <td>Doctor</td>
+      <td>-d</td>
+      <td>Check baseline integrity</td>
+      <td><code>sentinel-c --doctor</code></td>
+    </tr>
+  </tbody>
+</table>
 
-- Logs: data/.sentinel.log  
-- HTML report: reports/sentinel_report_<timestamp>.html
 
 ---
 
-⭐ Contribution
+## 📌 **Multi-Option Example**
 
-- Feel free to fork and add features  
-- Please respect ethical guidelines
+```bash
+# Initialize baseline and then scan directory
+sentinel-c --init ./myfolder
+sentinel-c --scan ./myfolder
+
+# Monitor a directory every 15 seconds
+sentinel-c --monitor ./myfolder 15
+
+# Verify a single file
+sentinel-c --verify ./myfolder/file.txt
+
+# Check baseline integrity
+sentinel-c --doctor
+
+# Show tool info with contact
+sentinel-c --about
+```
 
 ---
 
-📄 License
+## 🟢 **Output**
 
-This project is released under the MIT License.
+- Colored terminal messages:  
+  - **Green** → NEW files  
+  - **Yellow** → MODIFIED files  
+  - **Red** → DELETED files  
 
+- Logs: `sentinel-c-logs/data/.sentinel.log`  
+- HTML reports: `sentinel-c-logs/reports/sentinel_report_<timestamp>.html`
+
+---
+
+## ⭐ **Contribution**
+
+- Fork and add features freely.  
+- Follow ethical security guidelines.  
+
+---
+
+## 📄 **License**
+
+MIT License

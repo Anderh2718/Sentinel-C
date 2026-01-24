@@ -7,6 +7,7 @@
 
 namespace {
 
+// SHA-256 constants
 constexpr uint32_t K[64] = {
     0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
     0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
@@ -18,23 +19,30 @@ constexpr uint32_t K[64] = {
     0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2
 };
 
+// Rotate right
 inline uint32_t rotr(uint32_t x, uint32_t n) { return (x >> n) | (x << (32 - n)); }
 
-}
+} // namespace
 
 std::string sha256_file(const std::string& filepath) {
     std::ifstream file(filepath, std::ios::binary);
     if (!file) return "";
 
-    std::vector<uint8_t> data((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    std::vector<uint8_t> data((std::istreambuf_iterator<char>(file)),
+                               std::istreambuf_iterator<char>());
     uint64_t bit_len = data.size() * 8;
+
+    // Padding
     data.push_back(0x80);
     while ((data.size() * 8) % 512 != 448) data.push_back(0x00);
+
+    // Append length
     for (int i = 7; i >= 0; --i) data.push_back((bit_len >> (i * 8)) & 0xFF);
 
     uint32_t h[8] = {0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,
                       0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19};
 
+    // Process each 512-bit chunk
     for (size_t i = 0; i < data.size(); i += 64) {
         uint32_t w[64] = {0};
         for (int j = 0; j < 16; ++j)
